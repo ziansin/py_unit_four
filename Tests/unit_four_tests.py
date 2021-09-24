@@ -8,9 +8,6 @@ import assignment_four
 
 
 class MyTestCase(unittest.TestCase):
-    def test_even_odd(self):
-        self.assertEqual("13 is an odd number", even_odd.even_or_odd(13))
-        self.assertEqual("24 is an even number", even_odd.even_or_odd(24))
 
     def test_is_divisible(self):
         self.assertTrue(divisible.is_divisible(30, 15))
