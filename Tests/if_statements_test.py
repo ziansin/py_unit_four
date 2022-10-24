@@ -18,6 +18,7 @@ class MyTestCase(unittest.TestCase):
     def test_abs(self):
         self.assertEqual("The absolute value of -5.0 is 5.0", convert(-5))
         self.assertEqual("The absolute value of 5.0 is 5.0", convert(5))
+        self.assertEqual("The absolute value of 0.0 is 0.0", convert(0))
 
 if __name__ == '__main__':
     unittest.main()
