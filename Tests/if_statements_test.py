@@ -1,6 +1,7 @@
 import unittest
 from even_odd import even_or_odd
 from bonus import bonus
+from abs_value import convert
 
 
 class MyTestCase(unittest.TestCase):
@@ -14,7 +15,9 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual("Your total salary is: 5.25", bonus(5, 6))
         self.assertEqual("Your total salary is: 5", bonus(5, 5))
 
-
+    def test_abs(self):
+        self.assertEqual("The absolute value of -5.0 is 5.0", convert(-5))
+        self.assertEqual("The absolute value of 5.0 is 5.0", convert(5))
 
 if __name__ == '__main__':
     unittest.main()
