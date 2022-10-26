@@ -1,14 +1,6 @@
 def is_divisible(num1, num2):
-    """
-    Checks to see if one number is evenly divisible by the second
-    :param num1: The number being tested
-    :param num2: The divisor
-    :return: True if num1 is evenly divisible by num2, false otherwise
-    """
-
-    pass
-
-
+    if num1 % num2 == 0:
+        return True
 def main():
 
     # Get the two pieces of input from the user.
