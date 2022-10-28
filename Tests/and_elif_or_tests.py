@@ -30,14 +30,12 @@ class MyTestCase(unittest.TestCase):
     def test_points_6(self):
         self.assertEqual(2, points(85, False))
 
-"""
 
     def test_rps(self):
         self.assertEqual("You win!", who_wins(3, 2))
         self.assertEqual("It is a tie", who_wins(1, 1))
 
         # Put the rest of the rps tests below this line. There should be 9 in total.
-"""
 
 if __name__ == '__main__':
     unittest.main()
