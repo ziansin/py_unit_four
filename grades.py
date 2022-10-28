@@ -1,5 +1,4 @@
 def points(grade, is_AP):
-    score = 0
     if grade > 94:
         score = 4
     elif grade > 85:
@@ -10,9 +9,7 @@ def points(grade, is_AP):
         score = 1
     else:
         score = 0
-    if is_AP:
+    if is_AP == True:
         score += 0.2
     return score
 
-
-points(76, True)
