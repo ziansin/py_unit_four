@@ -1,8 +1,13 @@
 import random
 
+#function for drawing the card
 def get_card():
     return(random.randint(1,10))
-
+"""
+if the user's total is less than the dealer's at the end or the user busts, then you're aloser
+if the dealer's total is less than the user's at the end or he busts, then he is a loser
+if you both get the same amount then it's a tie
+"""
 def get_winner(user_total, dealer_total):
     if user_total > 21 and dealer_total < 21:
         return(print("You busted"))
@@ -16,6 +21,11 @@ def get_winner(user_total, dealer_total):
         return(print("You win!!!"))
     elif user_total == dealer_total:
         return(print("Tie"))
+
+"""
+adds the first two cards that are drawn, and gives the user four chances to draw more cards to try to get 21
+the dealer usually plays it safe by not drawing if the amount is 16 or more
+"""
 def main():
     get_card()
     first = get_card()
