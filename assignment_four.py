@@ -1,11 +1,13 @@
 import random
 
+#Zain Pilcher, 11/1/22, program for blackjack
+
 #function for drawing the card
 def get_card():
     return(random.randint(1,10))
 """
-if the user's total is less than the dealer's at the end or the user busts, then you're aloser
-if the dealer's total is less than the user's at the end or he busts, then he is a loser
+if the user's total is less than the dealer's at the end or the user busts, then you loser
+if the dealer's total is less than the user's at the end or he busts, then he is loses
 if you both get the same amount then it's a tie
 """
 def get_winner(user_total, dealer_total):
@@ -25,6 +27,7 @@ def get_winner(user_total, dealer_total):
 """
 adds the first two cards that are drawn, and gives the user four chances to draw more cards to try to get 21
 the dealer usually plays it safe by not drawing if the amount is 16 or more
+If the user or dealer gets 21, they get a blackjack
 """
 def main():
     get_card()
@@ -39,24 +42,28 @@ def main():
     if y_or_n == "y":
         third = get_card()
         user_tot = first + second + third
+        print("You drew the", third)
         print("Your total is now", user_tot)
         if user_tot < 21:
             y_or_n_second = str(input("Draw another card? "))
             if y_or_n_second == "y":
                 fourth = get_card()
                 user_tot = first + second + third + fourth
+                print("You drew the", fourth)
                 print("Your total is now", user_tot)
                 if user_tot < 21:
                     y_or_n_third = str(input("Draw another card? "))
                     if y_or_n_third == "y":
                         fifth = get_card()
                         user_tot = first + second + third + fourth + fifth
+                        print("You drew the", fifth)
                         print("Your total is now", user_tot)
                         if user_tot < 21:
                             y_or_n_fourth = str(input("Draw another card? "))
                             if y_or_n_fourth == "y":
                                 sixth = get_card()
                                 user_tot = first + second + third + fourth + fifth + sixth
+                                print("You drew the", sixth)
                                 print("Your total is now", user_tot)
                             elif y_or_n_third == "n":
                                 print("Your total is", user_tot)
@@ -95,9 +102,13 @@ def main():
         elif dealer_tot > 21:
             print("Bust")
     else:
-        print("He did not draw any more cards")
+        print("The dealer holds")
     print("")
     print(user_tot, "-", dealer_tot)
+    """
+    if the user gets 21 then the user blackjacks
+    if the dealer gets 21 then the dealer blackjacks
+    """
     if dealer_tot == 21:
         print("Dealer blackjack")
     if user_tot == 21:

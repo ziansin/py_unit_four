@@ -22,6 +22,7 @@ def who_wins(user, computer):
 def main():
     user_num = int(input("1 for rock, 2 for paper, 3 for scissors: "))
     computer_num = random.randint(1,3)
+    print("Computer chose", computer_num)
     print(who_wins(user_num, computer_num))
 
 if __name__ == '__main__':
