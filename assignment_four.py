@@ -1,16 +1,22 @@
 import random
 
-#Zain Pilcher, 11/1/22, program for blackjack
+#Zain Pilcher
+#11/3/22
+#Program for playing blackjack
 
-#function for drawing the card
 def get_card():
+    # function for drawing the card
     return(random.randint(1,10))
-"""
-if the user's total is less than the dealer's at the end or the user busts, then you loser
-if the dealer's total is less than the user's at the end or he busts, then he is loses
-if you both get the same amount then it's a tie
-"""
+
 def get_winner(user_total, dealer_total):
+    """
+    if the user's total is less than the dealer's at the end or the user busts, then you loser
+    if the dealer's total is less than the user's at the end or he busts, then he is loses
+    if you both get the same amount then it's a tie
+    :param user_total: the user's total amount from the cards
+    :param dealer_total: the dealer's total amount from the crads
+    :return: The result when the total's are finalized
+    """
     if user_total > 21 and dealer_total < 21:
         return(print("You busted"))
     elif user_total > 21 and dealer_total > 21:
@@ -23,13 +29,12 @@ def get_winner(user_total, dealer_total):
         return(print("You win!!!"))
     elif user_total == dealer_total:
         return(print("Tie"))
-
-"""
-adds the first two cards that are drawn, and gives the user four chances to draw more cards to try to get 21
-the dealer usually plays it safe by not drawing if the amount is 16 or more
-If the user or dealer gets 21, they get a blackjack
-"""
 def main():
+    """
+    adds the first two cards that are drawn, and gives the user four chances to draw more cards to try to get 21
+    the dealer usually plays it safe by not drawing if the amount is 16 or more
+    If the user or dealer gets 21, they get a blackjack
+    """
     get_card()
     first = get_card()
     get_card()
